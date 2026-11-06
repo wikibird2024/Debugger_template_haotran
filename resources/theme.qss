@@ -1,0 +1,125 @@
+/* One sheet for light and dark: Theme.cpp swaps every token for its color.
+   Color means state only: grey base, blue for focus and selection, green,
+   yellow and red only for machine state. */
+
+QMainWindow, QDialog, QScrollArea, QScrollArea > QWidget > QWidget {
+    background-color: @bg;
+}
+
+QGroupBox {
+    background-color: @surface;
+    border: 1px solid @border;
+    border-radius: 8px;
+    margin-top: 0.8em;
+    padding-top: 0.6em;
+    font-weight: 600;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 4px;
+    color: @text-muted;
+}
+
+QPushButton {
+    background-color: @surface-alt;
+    border: 1px solid @border;
+    border-radius: 6px;
+    padding: 5px 12px;
+}
+
+QPushButton:hover {
+    background-color: @hover;
+}
+
+QPushButton:pressed, QPushButton:checked {
+    background-color: @accent-soft;
+    color: @accent-text;
+}
+
+QPushButton:disabled {
+    color: @text-disabled;
+}
+
+QFrame#headerBar {
+    background-color: @surface;
+    border-bottom: 1px solid @border;
+}
+
+QPushButton#stopAllButton {
+    background-color: @danger;
+    border: none;
+    color: #FFFFFF;
+    font-size: 12pt;
+    font-weight: 700;
+    min-height: 36px;
+    min-width: 150px;
+}
+
+QPushButton#stopAllButton:hover {
+    background-color: @danger-hover;
+}
+
+QLabel#stopBlockedLabel {
+    color: @danger;
+    font-weight: 700;
+}
+
+QListWidget#navList {
+    background-color: @sidebar;
+    border: none;
+    border-right: 1px solid @border;
+    outline: none;
+    padding: 8px 6px;
+}
+
+QListWidget#navList::item {
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+QListWidget#navList::item:hover:enabled {
+    background-color: @hover;
+}
+
+QListWidget#navList::item:selected {
+    background-color: @accent-soft;
+    color: @accent-text;
+}
+
+QLabel#pageTitle {
+    font-size: 15pt;
+    font-weight: 600;
+}
+
+QLabel#connectionHint {
+    color: @accent-text;
+}
+
+QLabel#pageDescription {
+    color: @text-muted;
+}
+
+QFrame#logBar {
+    background-color: @surface-alt;
+    border-top: 1px solid @border;
+}
+
+QPlainTextEdit#logView {
+    background-color: @read-only;
+    border: none;
+    font-family: "Noto Sans Mono", "DejaVu Sans Mono", monospace;
+}
+
+QLabel#toast {
+    background-color: @tooltip-bg;
+    color: @tooltip-text;
+    border-radius: 6px;
+    padding: 8px 12px;
+}
+
+QLabel#toast[isError="true"] {
+    background-color: @danger;
+    color: #FFFFFF;
+}

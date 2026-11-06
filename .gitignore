@@ -1,0 +1,9 @@
+build/
+build-cmake/
+shots/
+.cache/
+.qtcreator/
+.vscode/
+compile_commands.json
+*.user
+__pycache__/
